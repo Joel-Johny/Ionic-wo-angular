@@ -34,16 +34,16 @@ ion-col {
                         <ion-card-content>
                             <ion-item>
                                 <ion-label position="floating">Expense Reason</ion-label>
-                                <ion-input></ion-input>
+                                <ion-input id="Reason" name="Reason" type="text"></ion-input>
                             </ion-item>
             
                             <ion-item>
                                 <ion-label position="floating">Expense Amount</ion-label>
-                                <ion-input></ion-input>
+                                <ion-input id="Amount" name="Amount" type="number"></ion-input>
                             </ion-item>
                             <div class="ion-margin-vertical ion-text-end">
-                                <ion-button fill="outline" color="danger" ><ion-icon name="close-outline" slot="start"></ion-icon>Clear</ion-button>
-                                <ion-button  color="success"><ion-icon name="add-outline" slot="start"></ion-icon>Add</ion-button>
+                                <ion-button fill="outline" color="danger" id="clr-btn"><ion-icon name="close-outline" slot="start"></ion-icon>Clear</ion-button>
+                                <ion-button  color="success" id="add-btn"><ion-icon name="add-outline" slot="start" ></ion-icon>Add</ion-button>
                             </div>
                                
                         </ion-card-content>
@@ -51,10 +51,26 @@ ion-col {
                       </ion-card>
                 </ion-col>
               </ion-row>
+              <ion-row>
+                <ion-col size-md="6" offset-md="3">
+                    <ion-col *ngIf="document.getElementById('result').children.length > 0">
+                        Show
+                      </ion-col>
+                    <ion-card >
+                        <ion-card-header>
+                          <ion-card-title class="ion-text-center">All expenses</ion-card-title>
+                        </ion-card-header>
+                    <ion-item>
+                        <ul id="result"></ul>
+                    </ion-item>
+                </ion-col>
+              </ion-row>
         </ion-content>
 
         
 
     </ion-app>
+<script src="./index.js"></script>
+
 </body>
 </html>
