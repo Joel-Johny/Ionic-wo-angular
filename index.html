@@ -9,11 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 </head>
 <style>
-ion-col {
-  background-color: #135d54;
-  border: solid 1px #fff;
-  color: #fff;
-}
+
 </style>
 <body>
     <ion-app>
@@ -52,19 +48,32 @@ ion-col {
                 </ion-col>
               </ion-row>
               <ion-row>
-                <ion-col size-md="6" offset-md="3">
-                    <ion-col *ngIf="document.getElementById('result').children.length > 0">
-                        Show
-                      </ion-col>
-                    <ion-card >
-                        <ion-card-header>
-                          <ion-card-title class="ion-text-center">All expenses</ion-card-title>
-                        </ion-card-header>
-                    <ion-item>
-                        <ul id="result"></ul>
-                    </ion-item>
+                <ion-col size-md="6" offset-md="3"> 
+                    <ion-card>
+                        <ion-card-content>
+
+                            <ion-item>
+                                <ul id="result"></ul>
+                            </ion-item>
+
+                        </ion-card-content>
+                    </ion-card>
+
                 </ion-col>
               </ion-row>
+              <ion-row>
+                <ion-col size-md="6" offset-md="3"> 
+                    <ion-card>
+                        <ion-card-content>
+                            <ion-item class="ion-align-items-center ion-justify-content-center">
+                                <h5>Total Expense : </h5><span id="total">0</span>
+                            </ion-item>
+                        </ion-card-content>
+                    </ion-card>
+                   
+                </ion-col>
+              </ion-row>
+
         </ion-content>
 
         
