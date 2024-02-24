@@ -9,7 +9,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 </head>
 <style>
+ #myToast {
+    --background: red;
+    --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+    --color: white;
+    text-align: center;
 
+  }
 </style>
 <body>
     <ion-app>
@@ -74,7 +80,13 @@
                 </ion-col>
               </ion-row>
 
+              <ion-toast id="myToast">
+                <ion-toast-content>
+                </ion-toast-content>
+              </ion-toast>
+
         </ion-content>
+
 
         
 

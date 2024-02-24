@@ -21,8 +21,11 @@ addBtn.addEventListener('click',()=>{
     const reasonInp=document.getElementById("Reason")
     const expenseInp=document.getElementById("Amount") // star1
     const value =expenseInp.value // star2
-    if(reasonInp.value.trim().length==0 || expenseInp.value <=0 || !isNaN(reasonInp.value))
-        return
+    if(reasonInp.value.trim().length==0 || expenseInp.value <=0 || !isNaN(reasonInp.value)){
+        reasonInp.value=''
+        expenseInp.value=''
+        showToast()
+    }
     else{
         const result=document.getElementById("result")
         const element=document.createElement('ion-item')
@@ -46,7 +49,13 @@ addBtn.addEventListener('click',()=>{
 
     
 })
-
+async function showToast() {
+    const toast = document.getElementById('myToast');
+    console.log(toast)
+    toast.message="Please enter valid data!"
+    toast.duration="4000"
+    await toast.present();
+  }
 function deleteItem(result,elementId,amount){
     const elementToDelete = document.getElementById(elementId);
     console.log("VAlue deleted : " ,amount)
